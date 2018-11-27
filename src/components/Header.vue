@@ -37,8 +37,9 @@
 
   li {
     display: inline-block;
-    margin: 6px;
     height: 100%;
+    padding: 5px 0;
+
   }
 
   a {
