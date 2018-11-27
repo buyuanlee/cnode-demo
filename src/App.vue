@@ -1,20 +1,43 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <nav>
+      <Header></Header>
+    </nav>
+    <main>
+      <PostList></PostList>
+    </main>
   </div>
 </template>
 
 <script>
   import Header from './components/Header'
+  import PostList from './components/PostList'
 
   export default {
     name: 'App',
     components: {
-      Header
+      Header,
+      PostList
     }
   }
 </script>
 
-<style>
+<style scoped>
+  #app {
+    background-color: #DCDCDC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  nav {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  main {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 5px;
+  }
 </style>
