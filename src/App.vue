@@ -25,9 +25,6 @@
 <style scoped>
   #app {
     background-color: #DCDCDC;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   nav {
@@ -39,5 +36,6 @@
     width: 80%;
     background-color: #fff;
     border-radius: 5px;
+    margin: 0 auto;
   }
 </style>
