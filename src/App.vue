@@ -4,7 +4,7 @@
       <Header></Header>
     </nav>
     <main>
-      <PostList></PostList>
+      <router-view name="main"></router-view>
     </main>
   </div>
 </template>
@@ -24,7 +24,7 @@
 
 <style scoped>
   #app {
-    background-color: #DCDCDC;
+    background-color: #E1E1E1;
   }
 
   nav {

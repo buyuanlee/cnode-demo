@@ -5,7 +5,7 @@
       <img src="../assets/loading.gif">
     </div>
     <!--主题列表-->
-    <div>
+    <div v-else>
       <ul>
         <li>
           <div class="topbar">
@@ -31,7 +31,13 @@
           topiclist_tab:(post.good!=true&&post.top!=true)
           }]">{{post|tabFormatter}}</span>
           <!--标题-->
-          <span>{{post.title}}</span>
+          <router-link :to="{
+          name:'post_content',
+          params:{
+            id:post.id
+          }}">
+            <span>{{post.title}}</span>
+          </router-link>
           <!--最后回复时间-->
           <span class="last_reply">{{post.last_reply_at | formatDate}}</span>
           <!--分割线-->
@@ -95,6 +101,16 @@
   img {
     width: 30px;
     height: 30px;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: blink;
+    text-decoration: underline;
   }
 
   .topbar {
