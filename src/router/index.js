@@ -26,7 +26,7 @@ export default new Router({
       name: 'user_info',
       path: '/userinfo/:name',
       components: {
-        main: Article
+        main: UserInfo
       }
     }
   ]
