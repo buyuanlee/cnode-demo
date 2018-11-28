@@ -17,7 +17,12 @@
       <div class="reply">
         <span>{{post.reply_count}} 条回复</span>
         <div class="reply_content" v-for="(reply,index) in post.replies">
-          <router-link :to="user_info">
+          <router-link :to="{
+          name:UserInfo,
+          params:{
+          name:reply.author.loginname
+          }
+          }">
             <img class="avatar" :src="reply.author.avatar_url">
           </router-link>
           <span class="reply_name">{{reply.author.loginname}}</span>
