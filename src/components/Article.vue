@@ -1,9 +1,12 @@
 <template>
   <article>
+    <!--加载动画-->
     <div class="loading" v-if="isLoading">
       <img src="../assets/loading.gif">
     </div>
+    <!--显示内容-->
     <div v-else>
+      <!--头部信息-->
       <header>
         <h3>{{post.title}}</h3>
         <ul>
@@ -13,22 +16,24 @@
           <li>• 来自:{{post|tabFormatter}}</li>
         </ul>
       </header>
+      <!--文章内容-->
       <main v-html="post.content" class="topic_content"></main>
+      <!--回复内容-->
       <div class="reply">
         <span>{{post.reply_count}} 条回复</span>
         <div class="reply_content" v-for="(reply,index) in post.replies">
           <router-link :to="{
-          name:UserInfo,
+          name:'user_info',
           params:{
-          name:reply.author.loginname
+            name:reply.author.loginname
           }
           }">
             <img class="avatar" :src="reply.author.avatar_url">
+            <span class="reply_name">{{reply.author.loginname}}</span>
           </router-link>
-          <span class="reply_name">{{reply.author.loginname}}</span>
           <span class="reply_index">{{index+1}}楼•{{reply.create_at|formatDate}}</span>
           <span class="awesome" v-if="reply.ups.length>0">👍{{reply.ups.length}}</span>
-          <p v-html="reply.content"></p>
+          <p class="content" v-html="reply.content"></p>
         </div>
       </div>
     </div>
@@ -101,6 +106,12 @@
     padding: 10px 0 0 15px;
   }
 
+  a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
   ul > li {
     display: inline-block;
     list-style: none;
@@ -136,19 +147,27 @@
   .avatar {
     width: 30px;
     height: 30px;
+    border-radius: 3px;
+    margin: 15px 0 0 15px;
   }
 
-  .reply_content > .reply_name, .reply_index {
+  .reply_name, .reply_index {
     vertical-align: top;
 
   }
 
-  .reply_content > .reply_name {
+  .reply_name {
+    display: inline-block;
     font-weight: bolder;
+    color: #666;
+    margin: 15px 5px;
   }
 
-  .reply_content > .reply_index {
+  .reply_index {
+    display: inline-block;
     font-size: 12px;
+    margin: 15px 0;
+
   }
 
   .awesome {
@@ -156,5 +175,7 @@
     margin-right: 15px;
   }
 
-
+  .content {
+    margin-left: 60px;
+  }
 </style>
