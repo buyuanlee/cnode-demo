@@ -5,6 +5,7 @@
     </nav>
     <main>
       <router-view name="main"></router-view>
+      <router-view name="sidebar"></router-view>
     </main>
   </div>
 </template>
@@ -33,9 +34,9 @@
   }
 
   main {
-    width: 80%;
-    background-color: #fff;
-    border-radius: 5px;
     margin: 0 auto;
+    width: 90%;
+    border-radius: 5px;
+    display: flex;
   }
 </style>

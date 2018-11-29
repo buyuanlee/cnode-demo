@@ -17,8 +17,9 @@
             <router-link :to="{
             name:'post_content',
             params:{
-            limit:5,
-            id:item.id
+            id:item.id,
+            name:item.author.loginname
+
             }}">
               {{item.title}}
             </router-link>
@@ -32,7 +33,8 @@
             <router-link :to="{
             name:'post_content',
             params:{
-            id:item.id
+            id:item.id,
+            name:item.author.loginname
             }}">
               {{item.title}}
             </router-link>
