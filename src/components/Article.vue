@@ -66,6 +66,11 @@
     beforeMount() {
       this.isLoading = true
       this.getArticle()
+    },
+    watch: {
+      '$route'(to, from) {
+        this.getArticle()
+      }
     }
   }
 </script>
@@ -81,6 +86,8 @@
 
   article {
     background-color: #DCDCDC;
+    width: 75%;
+    margin: 0 auto;
   }
 
   header {
