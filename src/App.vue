@@ -23,9 +23,11 @@
   }
 </script>
 
+
 <style scoped>
   #app {
     background-color: #E1E1E1;
+
   }
 
   nav {
