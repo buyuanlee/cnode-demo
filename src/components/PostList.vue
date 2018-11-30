@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="postlist">
     <!--数据未返回时显示loading-->
     <div class="loading" v-if="isLoading">
       <img src="../assets/loading.gif">
@@ -9,17 +9,16 @@
       <ul>
         <li>
           <div class="topbar">
-            <span>全部</span>
-            <span>精华</span>
-            <span>分享</span>
-            <span>问答</span>
-            <span>招聘</span>
-            <span>客户端测试</span>
+            <span @click="change" :class="[tab === '' ? 'active':'deactive']">全部</span>
+            <span @click="change" :class="[tab === 'good' ? 'active':'deactive']">精华</span>
+            <span @click="change" :class="[tab === 'share' ? 'active':'deactive']">分享</span>
+            <span @click="change" :class="[tab === 'ask' ? 'active':'deactive']">问答</span>
+            <span @click="change" :class="[tab === 'job' ? 'active':'deactive']">招聘</span>
           </div>
         </li>
         <li v-for="post in posts">
           <!--头像-->
-          <img :src="post.author.avatar_url" alt="">
+          <img class="avatar" :src="post.author.avatar_url" alt="">
           <!--回复浏览数-->
           <span class="count">
           <span class="reply_count">{{post.reply_count}}</span><span class="visit_count">/{{post.visit_count}}</span>
@@ -62,7 +61,8 @@
         isLoading: false,
         //页面列表数组
         posts: [],
-        postpage: 1
+        postpage: 1,
+        tab: ''
       }
     },
     components: {
@@ -73,7 +73,8 @@
         this.$http.get('https://cnodejs.org/api/v1/topics', {
           params: {
             page: this.postpage,
-            limit: 20
+            limit: 20,
+            tab: this.tab,
           }
         })
         //返回成功
@@ -85,6 +86,23 @@
           .catch(err => {
             console.log(err)
           })
+      },
+      change(event) {
+        if (event.currentTarget.innerText === '全部') {
+          this.tab = ''
+        } else if (event.currentTarget.innerText === '精华') {
+          this.tab = 'good'
+        } else if (event.currentTarget.innerText === '分享') {
+          this.tab = 'share'
+        } else if (event.currentTarget.innerText === '问答') {
+          this.tab = 'ask'
+        } else if (event.currentTarget.innerText === '招聘') {
+          this.tab = 'job'
+        } else {
+
+        }
+
+        this.getData()
       },
       renderList(value) {
         this.postpage = value;
@@ -100,12 +118,11 @@
 
 <style scoped>
   ul {
-    list-style: none;
     padding: 0;
   }
 
   ul li:not(:first-child) {
-    padding: 9px;
+    padding: 10px;
     font-size: 15px;
     font-weight: 400;
     border-top: 1px solid #f0f0f0;
@@ -115,29 +132,32 @@
     background-color: #E1E1E1;
   }
 
-  img {
-    width: 30px;
-    height: 30px;
+  .topbar {
+    font-size: 14px;
   }
 
-  a {
-    color: #000;
-    text-decoration: none;
+  .active {
+    color: #ffffff;
+    background-color: #80BD22;
+    border-radius: 3px;
+    padding: 3px 4px;
   }
 
-  a:hover {
-    text-decoration: blink;
-    text-decoration: underline;
+  .deactive {
+    color: #80BD22;
+    padding: 10px;
+  }
+
+  .postlist {
+    background-color: #fff;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .topbar {
-    background-color: #E1E1E1;
-    padding: 9px;
-  }
-
-  .topbar > span {
-    color: #80BD22;
+    background-color: #f6f6f6;
     padding: 10px;
+    margin: 0;
   }
 
   .count {
