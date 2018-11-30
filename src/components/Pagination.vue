@@ -5,7 +5,7 @@
     <button v-if="judge">……</button>
     <button class="btnnum" v-for="btn in btns"
             @click="change(btn)"
-            :class="[{active:btn===currentPage},'deactive']">
+            :class="[{active:btn===currentPage}]">
       {{btn}}
     </button>
     <button @click="change">下一页</button>

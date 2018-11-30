@@ -85,7 +85,6 @@
 <style scoped>
 
   article {
-    background-color: #DCDCDC;
     width: 75%;
     margin: 0 auto;
   }
@@ -103,34 +102,16 @@
     border-radius: 0 0 3px 3px;
   }
 
-  ul {
-    margin: 0;
-    padding-left: 15px;
-  }
-
   h3 {
     margin: 0;
     padding: 10px 0 0 15px;
   }
 
-  a {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-  }
-
   ul > li {
     display: inline-block;
-    list-style: none;
     font-size: 12px;
     color: #838383;
     margin-right: 10px;
-    padding: 0;
-  }
-
-  p {
-    margin: 0;
-    padding: 0;
   }
 
   .reply {
