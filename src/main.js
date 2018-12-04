@@ -5,10 +5,13 @@ import App from './App'
 import router from './router'
 import Axios from 'axios'
 import $ from 'jquery'
+import Vuex from 'vuex'
 
+// 引入外部css文件
 import './assets/themes/github.css'
 import './assets/reset.css'
 
+Vue.use(Vuex)
 Vue.prototype.$http = Axios
 
 Vue.config.productionTip = false
