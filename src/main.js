@@ -6,6 +6,7 @@ import router from './router'
 import Axios from 'axios'
 import $ from 'jquery'
 
+import './assets/themes/github.css'
 import './assets/reset.css'
 
 Vue.prototype.$http = Axios
