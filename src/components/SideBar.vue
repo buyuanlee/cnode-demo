@@ -1,22 +1,22 @@
 <template>
   <div class="sidebar">
     <!--作者信息-->
+    <p class="header">作者</p>
     <section class="authorsummary">
-      <p>作者</p>
       <router-link :to="{
       name:'user_info',
       params:{
       name:userinfo.loginname
       }
       }">
-
         <img class="avatar" :src="userinfo.avatar_url">
         <span class="loginname">{{userinfo.loginname}}</span>
       </router-link>
+      <p>积分：{{userinfo.score}}</p>
     </section>
     <!--最近话题-->
+    <p class="header">作者最近其他话题</p>
     <section class="recent_topics">
-      <p>作者最近其他话题</p>
       <ul>
         <li v-for="item in topiclimit">
           <router-link :to="{
@@ -32,8 +32,8 @@
       </ul>
     </section>
     <!--最近回复-->
+    <p class="header">作者最近参与话题</p>
     <section class="recent_replies">
-      <p>作者最近参与话题</p>
       <ul>
         <li v-for="item in replylimit">
           <router-link :to="{
@@ -94,7 +94,12 @@
 
 <style scoped>
   section {
-    border: 1px solid red;
+    background-color: #fff;
+    border-radius: 0 0 3px 3px;
+    margin: 1px 0 10px 0;
+    font-size: 14px;
+    color: #777777;
+    padding: 10px;
   }
 
   a {
@@ -106,14 +111,26 @@
     color: #4183C4;
   }
 
+  li {
+    margin: 5px;
+  }
+
+  .header {
+    margin: 0;
+    border-radius: 3px 3px 0 0;
+    background-color: #F6F6F6;
+    font-size: 14px;
+    padding: 5px;
+  }
+
   .sidebar {
     width: 20%;
     margin: 0 auto;
   }
 
   .avatar {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 3px;
   }
 
