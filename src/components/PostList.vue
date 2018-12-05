@@ -18,7 +18,14 @@
         </li>
         <li v-for="post in posts">
           <!--头像-->
-          <img class="avatar" :src="post.author.avatar_url" alt="">
+          <router-link :to="{
+          name:'user_info',
+          params:{
+          name:post.author.loginname
+          }
+          }">
+            <img class="avatar" :src="post.author.avatar_url" alt="">
+          </router-link>
           <!--回复浏览数-->
           <span class="count">
           <span class="reply_count">{{post.reply_count}}</span><span class="visit_count">/{{post.visit_count}}</span>
