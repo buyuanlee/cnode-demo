@@ -12,6 +12,7 @@ import './assets/themes/github.css'
 import './assets/reset.css'
 
 Vue.use(Vuex)
+// 挂载Axios至Vue原型
 Vue.prototype.$http = Axios
 
 Vue.config.productionTip = false
@@ -24,6 +25,7 @@ new Vue({
   template: '<App/>'
 })
 
+// 时间格式过滤器
 Vue.filter('formatDate', function (str) {
     if (!str) return ''
     var date = new Date(str)
@@ -48,6 +50,7 @@ Vue.filter('formatDate', function (str) {
   }
 )
 
+// 标签过滤器
 Vue.filter('tabFormatter', function (post) {
   if (post.good == true) {
     return '精华'
