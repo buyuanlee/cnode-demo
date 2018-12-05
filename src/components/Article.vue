@@ -74,14 +74,7 @@
     }
   }
 </script>
-<style>
-  @import url('../assets/themes/github.css');
 
-  .markdown-text p {
-    margin: 0;
-    padding: 0;
-  }
-</style>
 <style scoped>
 
   article {
@@ -111,7 +104,7 @@
     display: inline-block;
     font-size: 12px;
     color: #838383;
-    margin-right: 10px;
+    margin: 10px 0 0 15px;
   }
 
   .reply {
