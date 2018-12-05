@@ -134,7 +134,6 @@
 
   .reply_name, .reply_index {
     vertical-align: top;
-
   }
 
   .reply_name {
