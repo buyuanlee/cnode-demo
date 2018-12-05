@@ -1,13 +1,21 @@
 <template>
   <div class="header">
-    <img class="logo" src="../assets/cnodejs_light.svg" alt="logo">
+    <router-link :to="{
+    name:'root'
+    }">
+      <img class="logo" src="../assets/cnodejs_light.svg" alt="logo">
+    </router-link>
     <ul>
-      <li><a href="#">首页</a></li>
-      <li><a href="#">新手入门</a></li>
-      <li><a href="#">API</a></li>
-      <li><a href="#">关于</a></li>
-      <li><a href="#">注册</a></li>
-      <li><a href="#">登陆</a></li>
+      <router-link :to="{
+    name:'root'
+    }">
+        <li><a href="#">首页</a></li>
+      </router-link>
+      <li><a href="https://cnodejs.org/getstart">新手入门</a></li>
+      <li><a href="https://cnodejs.org/api">API</a></li>
+      <li><a href="https://cnodejs.org/about">关于</a></li>
+      <li><a href="https://cnodejs.org/auth/github/new">注册</a></li>
+      <li><a href="https://cnodejs.org/signin">登陆</a></li>
     </ul>
   </div>
 </template>
