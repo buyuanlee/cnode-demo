@@ -19,7 +19,7 @@ export default new Router({
     },
     {
       name: 'post_content',
-      path: '/topic/:id&author=:name',
+      path: './topic/:id&author=:name',
       components: {
         main: Article,
         sidebar: SideBar
@@ -27,7 +27,7 @@ export default new Router({
     },
     {
       name: 'user_info',
-      path: '/userinfo/:name',
+      path: './userinfo/:name',
       components: {
         main: UserInfo
       }
