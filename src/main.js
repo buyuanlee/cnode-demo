@@ -8,7 +8,7 @@ import $ from 'jquery'
 import Vuex from 'vuex'
 
 // 引入外部css文件
-import './assets/themes/github.css'
+import './assets/github.css'
 import './assets/reset.css'
 
 Vue.use(Vuex)
