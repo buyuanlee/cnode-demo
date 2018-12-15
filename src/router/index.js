@@ -6,20 +6,20 @@ import UserInfo from '../components/UserInfo'
 import SideBar from '../components/SideBar'
 
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       name: 'root',
-      path: './',
+      path: '/',
       components: {
         main: PostList
       }
     },
     {
       name: 'post_content',
-      path: './topic/:id&author=:name',
+      path: '/topic/:id&author=:name',
       components: {
         main: Article,
         sidebar: SideBar
@@ -27,7 +27,7 @@ export default new Router({
     },
     {
       name: 'user_info',
-      path: './userinfo/:name',
+      path: '/userinfo/:name',
       components: {
         main: UserInfo
       }
