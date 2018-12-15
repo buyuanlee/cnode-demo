@@ -6,13 +6,13 @@ import UserInfo from '../components/UserInfo'
 import SideBar from '../components/SideBar'
 
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       name: 'root',
-      path: '/',
+      path: './',
       components: {
         main: PostList
       }
